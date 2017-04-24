@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://${pwd}/../config-repo
+server:
+  port: 8020
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/ddtramp/config-repo.git
+  rabbitmq:
+    host: rabbitmq
